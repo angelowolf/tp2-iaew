@@ -1,15 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.iaew.tp2.model;
+package edu.utnfrc.iaew.tp2.model;
 
 import org.joda.time.LocalDate;
 
 /**
- *
- * @author ang_2
+ * @author Angelo Wolf, Patricio Carranza
+ * @version 1.00.001
+ * Ultimo cambio: 17/05/2016
  */
 public class Producto {
 
@@ -22,7 +18,8 @@ public class Producto {
     public Producto() {
     }
 
-    public Producto(int stockDisponible, String nombre, String descripcion, float precioLista, Categoria categoria, LocalDate fechaAlta) {
+    public Producto(int stockDisponible, String nombre, String descripcion, 
+                    float precioLista, Categoria categoria, LocalDate fechaAlta) {
         this.stockDisponible = stockDisponible;
         this.nombre = nombre;
         this.descripcion = descripcion;

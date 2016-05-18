@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Persistencia.ORM.DAOImplementacion;
 
 import Persistencia.ORM.Util.GenericDAO;
@@ -11,11 +6,12 @@ import java.util.List;
 import org.apache.log4j.Logger;
 import org.hibernate.Session;
 import Persistencia.ORM.DAOInterface.IUsuario;
-import com.iaew.tp2.model.Usuario;
+import edu.utnfrc.iaew.tp2.model.Usuario;
 
 /**
- *
- * @author ang_2
+ * @author Angelo Wolf, Patricio Carranza
+ * @version 1.00.001
+ * Ultimo cambio: 17/05/2016
  */
 public class UsuarioDAO extends GenericDAO<Usuario, Integer> implements IUsuario {
 

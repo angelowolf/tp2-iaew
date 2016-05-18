@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <!-- Generated 13-sep-2013 15:59:20 by Hibernate Tools 3.4.0.CR1 -->
-<hibernate-mapping package="com.iaew.tp2.model">   
-    <class name="Producto" table="producto">
-        <id column="id" name="idProducto">
-            <generator class="native"/>
-        </id>
-        <property name="stockDisponible"/>
-        <property name="descripcion"/>
-        <property name="nombre"/>
-        <property name="precioLista"/>        
-         <property name="categoria">
-            <type name="org.hibernate.type.EnumType">
-                <param name="type">12</param>
-                <param name="enumClass">com.iaew.tp2.model.Categoria</param>
-            </type>
-        </property>
-        <property name="fechaAlta" type="org.jadira.usertype.dateandtime.joda.PersistentLocalDate"/>    
-    </class>
+<hibernate-mapping package="edu.utnfrc.iaew.tp2.model">
+  <class name="Producto" table="producto">
+    <id column="id" name="idProducto">
+      <generator class="native"/>
+    </id>
+    <property name="stockDisponible"/>
+    <property name="descripcion"/>
+    <property name="nombre"/>
+    <property name="precioLista"/>
+    <property name="categoria">
+      <type name="org.hibernate.type.EnumType">
+        <param name="type">12</param>
+        <param name="enumClass">edu.utnfrc.iaew.tp2.model.Categoria</param>
+      </type>
+    </property>
+    <property name="fechaAlta" type="org.jadira.usertype.dateandtime.joda.PersistentLocalDate"/>
+  </class>
 </hibernate-mapping>
