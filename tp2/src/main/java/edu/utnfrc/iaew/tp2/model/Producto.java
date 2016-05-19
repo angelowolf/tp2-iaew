@@ -1,5 +1,6 @@
 package edu.utnfrc.iaew.tp2.model;
 
+import org.joda.time.DateTime;
 import org.joda.time.LocalDate;
 
 /**
@@ -14,7 +15,7 @@ public class Producto {
     private float precioLista;
     private Categoria categoria;
     private LocalDate fechaAlta;
-    private LocalDate fechaConsulta = new LocalDate();
+    private DateTime fechaConsulta = new DateTime();
 
     public Producto() {
     }
@@ -85,17 +86,17 @@ public class Producto {
         this.fechaAlta = fechaAlta;
     }
 
-    public LocalDate getFechaConsulta() {
+    public DateTime getFechaConsulta() {
         return fechaConsulta;
     }
 
-    public void setFechaConsulta(LocalDate fechaConsulta) {
+    public void setFechaConsulta(DateTime fechaConsulta) {
         this.fechaConsulta = fechaConsulta;
     }
 
     @Override
     public String toString() {
-        return "Producto {" + "idProducto=" + idProducto + ", stockDisponible=" + stockDisponible + ", nombre=" + nombre + ", descripcion=" + descripcion + ", precioLista=" + precioLista + ", categoria=" + categoria + ", fechaAlta=" + fechaAlta + ", fechaConsulta=" + fechaConsulta + '}';
+        return "Producto {" + "idProducto=" + idProducto + ", stockDisponible=" + stockDisponible + ", nombre=" + nombre + ", descripcion=" + descripcion + ", precioLista=" + precioLista + ", categoria=" + categoria + ", fechaAlta=" + fechaAlta + ", fechaConsulta=" + fechaConsulta.toString("dd/MM/YYYY HH:mm:ss") + '}';
     }
     
 }
