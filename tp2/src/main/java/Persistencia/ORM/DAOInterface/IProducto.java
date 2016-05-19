@@ -14,7 +14,8 @@ import java.util.List;
 public interface IProducto extends IGenericDAO<Producto, Integer> {
 
     public List<Producto> listarConStock();
-    public List<Producto> buscarConStock(String nombre);
+    public List<Producto> buscarConStock(String nombre)
+            throws ProductoInexistenteException;
     public int reservarStock(int idProducto, int cantidad) 
             throws StockInsuficienteException, 
                    ProductoInexistenteException;

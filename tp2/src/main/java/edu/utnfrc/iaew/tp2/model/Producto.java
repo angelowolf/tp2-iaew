@@ -14,6 +14,7 @@ public class Producto {
     private float precioLista;
     private Categoria categoria;
     private LocalDate fechaAlta;
+    private LocalDate fechaConsulta = new LocalDate();
 
     public Producto() {
     }
@@ -84,9 +85,17 @@ public class Producto {
         this.fechaAlta = fechaAlta;
     }
 
-    @Override
-    public String toString() {
-        return "Producto{" + "idProducto=" + idProducto + ", stockDisponible=" + stockDisponible + ", nombre=" + nombre + ", descripcion=" + descripcion + ", precioLista=" + precioLista + ", categoria=" + categoria + ", fechaAlta=" + fechaAlta + '}';
+    public LocalDate getFechaConsulta() {
+        return fechaConsulta;
     }
 
+    public void setFechaConsulta(LocalDate fechaConsulta) {
+        this.fechaConsulta = fechaConsulta;
+    }
+
+    @Override
+    public String toString() {
+        return "Producto {" + "idProducto=" + idProducto + ", stockDisponible=" + stockDisponible + ", nombre=" + nombre + ", descripcion=" + descripcion + ", precioLista=" + precioLista + ", categoria=" + categoria + ", fechaAlta=" + fechaAlta + ", fechaConsulta=" + fechaConsulta + '}';
+    }
+    
 }

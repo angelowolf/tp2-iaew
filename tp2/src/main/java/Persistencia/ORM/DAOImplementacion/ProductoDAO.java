@@ -31,7 +31,8 @@ public class ProductoDAO extends GenericDAO<Producto, Integer> implements IProdu
     }
 
     @Override
-    public List<Producto> buscarConStock(String nombre) {
+    public List<Producto> buscarConStock(String nombre) 
+            throws ProductoInexistenteException {
         Session session = getHibernateTemplate();
         List<Producto> objetos = new ArrayList<>();
         try {
@@ -40,6 +41,9 @@ public class ProductoDAO extends GenericDAO<Producto, Integer> implements IProdu
         } catch (RuntimeException e) {
             LOG.error("Error al buscar los Productos.", e);
         }
+        
+        if(objetos.isEmpty())
+            throw new ProductoInexistenteException(nombre);
         return objetos;
     }
 

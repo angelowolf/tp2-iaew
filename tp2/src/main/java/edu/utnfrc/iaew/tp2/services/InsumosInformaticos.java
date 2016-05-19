@@ -21,8 +21,10 @@ public class InsumosInformaticos {
 
     
     @WebMethod(operationName = "reservarStock")
-    public String reservarStock(@WebParam(name = "idProducto") int idProducto, @WebParam(name = "cantidad") int cantidad) 
-            throws ProductoInexistenteException, StockInsuficienteException {        
+    public String reservarStock(@WebParam(name = "idProducto") int idProducto,
+                                @WebParam(name = "cantidad") int cantidad) 
+            throws ProductoInexistenteException,
+                   StockInsuficienteException {        
         return "Se han reservado " + new ProductoDAO().reservarStock(idProducto, cantidad) +
                 " unidades del producto " + new ProductoDAO().buscar(idProducto).getNombre() +
                 ". El stock remanente es de " +  new ProductoDAO().buscar(idProducto).getStockDisponible();
@@ -30,7 +32,8 @@ public class InsumosInformaticos {
 
    
     @WebMethod(operationName = "consultarProductoPorNombre")
-    public List<Producto> consultarProductoPorNombre(@WebParam(name = "nombre") String nombre) {
+    public List<Producto> consultarProductoPorNombre(@WebParam(name = "nombre") String nombre) 
+            throws ProductoInexistenteException {
         return new ProductoDAO().buscarConStock(nombre);
     }
 }
