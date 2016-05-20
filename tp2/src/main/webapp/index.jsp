@@ -6,6 +6,7 @@
     Author     : Angelo Wolf, Patricio Carranza
 --%>
 
+<%@page import="Persistencia.ORM.DAOImplementacion.StockInsuficienteException"%>
 <%@page import="edu.utnfrc.iaew.tp2.model.Producto"%>
 <%@page import="Persistencia.ORM.DAOImplementacion.ProductoDAO"%>
 <%@page import="Persistencia.ORM.DAOImplementacion.UsuarioDAO"%>
@@ -39,7 +40,11 @@
             }
             out.println("<br>");
             
-            out.println("Reservado " + productoDAO.reservarStock(3, 2) + " del idProducto 3");
+            try {
+                out.println("Reservado " + productoDAO.reservarStock(3, 2) + " del idProducto 3");
+            } catch(StockInsuficienteException ex) {
+                out.println(ex.getMessage());
+            }
         %>
     </body>
 </html>
