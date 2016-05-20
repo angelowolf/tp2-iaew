@@ -1,13 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.iaew.tp2.model;
+package edu.utnfrc.iaew.tp2.model;
 
 /**
- *
- * @author ang_2
+ * @author Angelo Wolf, Patricio Carranza
+ * @version 1.00.001
+ * Ultimo cambio: 17/05/2016
  */
 public class Usuario {
 
@@ -44,6 +40,11 @@ public class Usuario {
 
     public void setClave(String clave) {
         this.clave = clave;
+    }
+
+    @Override
+    public String toString() {
+        return "Usuario{" + "id=" + id + ", nick=" + nick + ", clave=?????}";
     }
 
 }

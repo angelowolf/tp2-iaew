@@ -1,15 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.iaew.tp2.model;
+package edu.utnfrc.iaew.tp2.model;
 
+import org.joda.time.DateTime;
 import org.joda.time.LocalDate;
 
 /**
- *
- * @author ang_2
+ * @author Angelo Wolf, Patricio Carranza
+ * @version 1.00.001
+ * Ultimo cambio: 17/05/2016
  */
 public class Producto {
 
@@ -18,11 +15,13 @@ public class Producto {
     private float precioLista;
     private Categoria categoria;
     private LocalDate fechaAlta;
+    private DateTime fechaConsulta = new DateTime();
 
     public Producto() {
     }
 
-    public Producto(int stockDisponible, String nombre, String descripcion, float precioLista, Categoria categoria, LocalDate fechaAlta) {
+    public Producto(int stockDisponible, String nombre, String descripcion, 
+                    float precioLista, Categoria categoria, LocalDate fechaAlta) {
         this.stockDisponible = stockDisponible;
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -87,9 +86,17 @@ public class Producto {
         this.fechaAlta = fechaAlta;
     }
 
-    @Override
-    public String toString() {
-        return "Producto{" + "idProducto=" + idProducto + ", stockDisponible=" + stockDisponible + ", nombre=" + nombre + ", descripcion=" + descripcion + ", precioLista=" + precioLista + ", categoria=" + categoria + ", fechaAlta=" + fechaAlta + '}';
+    public DateTime getFechaConsulta() {
+        return fechaConsulta;
     }
 
+    public void setFechaConsulta(DateTime fechaConsulta) {
+        this.fechaConsulta = fechaConsulta;
+    }
+
+    @Override
+    public String toString() {
+        return "Producto {" + "idProducto=" + idProducto + ", stockDisponible=" + stockDisponible + ", nombre=" + nombre + ", descripcion=" + descripcion + ", precioLista=" + precioLista + ", categoria=" + categoria + ", fechaAlta=" + fechaAlta + ", fechaConsulta=" + fechaConsulta.toString("dd/MM/YYYY HH:mm:ss") + '}';
+    }
+    
 }
